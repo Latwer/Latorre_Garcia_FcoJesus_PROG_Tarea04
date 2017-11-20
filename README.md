@@ -1,5 +1,6 @@
 # Latorre_Garcia_FcoJesus_PROG_Tarea04
 Francisco Jesús Latorre García
+
 Ejercicio 1
 Realiza un programa que lea una palabra por teclado y determine si es una palabra panvocálica o no. Una palabra es panvocálica si contiene al menos las cinco vocales.
 
