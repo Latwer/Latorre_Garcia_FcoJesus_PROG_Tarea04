@@ -29,6 +29,14 @@ public class Punto {
     }
 
     public String toString() {
-        return "X= " + x +", Y= "+ y;
+        return "X= " + x + ", Y= " + y;
     }
+
+    public double distancia(Punto parametro) {
+        double cateto1 = x - parametro.getX();
+        double cateto2 = y - parametro.getY();
+        double hipotenusa = Math.sqrt(cateto1 * cateto1 + cateto2 * cateto2);
+        return hipotenusa;
+    }
+
 }
