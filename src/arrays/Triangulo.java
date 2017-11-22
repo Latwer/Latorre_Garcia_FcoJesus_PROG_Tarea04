@@ -27,4 +27,16 @@ public class Triangulo {
         this.vertice3 = vertice3;
     }
 
+    private double getVertice1() {
+        return vertice1;
+    }
+
+    private double getVertice2() {
+        return vertice2;
+    }
+
+    private double getVertice3() {
+        return vertice3;
+    }
+
 }
