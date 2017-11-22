@@ -43,4 +43,11 @@ public class Triangulo {
         return "A= " + verticeA + ", B= " + verticeB + ", C= " + verticeC;
     }
 
+    public double perimetro() {
+        double distanciaAB = verticeA.distancia(verticeB);
+        double distanciaAC = verticeA.distancia(verticeC);
+        double distanciaBC = verticeB.distancia(verticeC);
+        double perimetro = distanciaAB + distanciaAC + distanciaBC;
+        return perimetro;
+    }
 }
