@@ -21,4 +21,10 @@ public class Triangulo {
     private double vertice2;
     private double vertice3;
 
+    public Triangulo(double vertice1, double vertice2, double vertice3) {
+        this.vertice1 = vertice1;
+        this.vertice2 = vertice2;
+        this.vertice3 = vertice3;
+    }
+
 }
