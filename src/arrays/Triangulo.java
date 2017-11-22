@@ -11,32 +11,36 @@ package arrays;
  * representación de dicho triángulo: A(x, y) B(x, y) C(x, y). Haz un commit.
  * Crea un método llamado perímetro que devolverá el perímetro del triángulo. El
  * perímetro de un triángulo se halla sumando sus lados. Por lo que deberás
- * hallar los tres lados (AB, AC, BC) y sumarlo. Para hllar cada lado puedes
+ * hallar los tres lados (AB, AC, BC) y sumarlo. Para hallar cada lado puedes
  * recurrir a la distancia entre un punto y otro implementada en la clase Punto.
  * Haz un commit.
  */
 public class Triangulo {
 
-    private double vertice1;
-    private double vertice2;
-    private double vertice3;
+    private Punto verticeA;
+    private Punto verticeB;
+    private Punto verticeC;
 
-    public Triangulo(double vertice1, double vertice2, double vertice3) {
-        this.vertice1 = vertice1;
-        this.vertice2 = vertice2;
-        this.vertice3 = vertice3;
+    public Triangulo(Punto verticeA, Punto verticeB, Punto verticeC) {
+        this.verticeA = verticeA;
+        this.verticeB = verticeB;
+        this.verticeC = verticeC;
     }
 
-    private double getVertice1() {
-        return vertice1;
+    private Punto getVerticeA() {
+        return verticeA;
     }
 
-    private double getVertice2() {
-        return vertice2;
+    private Punto getVerticeB() {
+        return verticeB;
     }
 
-    private double getVertice3() {
-        return vertice3;
+    private Punto getVerticeC() {
+        return verticeC;
+    }
+
+    public String toString() {
+        return "A= " + verticeA + ", B= " + verticeB + ", C= " + verticeC;
     }
 
 }
