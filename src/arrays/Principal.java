@@ -39,5 +39,14 @@ public class Principal {
         } while (tamano <= 0);
 
         arrayTriangulos = new Triangulo[tamano];
+
+        for (int i = 0; i < arrayTriangulos.length; i++) {
+            Punto verticeA = new Punto(Math.random() * 100, Math.random() * 100);
+            Punto verticeB = new Punto(Math.random() * 100, Math.random() * 100);
+            Punto verticeC = new Punto(Math.random() * 100, Math.random() * 100);
+            arrayTriangulos[i] = new Triangulo(verticeA, verticeB, verticeC);
+            //System.out.println(arrayTriangulos[i]);
+        }
+        
     }
 }

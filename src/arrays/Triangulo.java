@@ -40,7 +40,7 @@ public class Triangulo {
     }
 
     public String toString() {
-        return "A= " + verticeA + ", B= " + verticeB + ", C= " + verticeC;
+        return "A(" + verticeA + "), B(" + verticeB + "), C(" + verticeC + ")";
     }
 
     public double perimetro() {
