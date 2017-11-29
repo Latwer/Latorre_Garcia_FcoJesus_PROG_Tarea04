@@ -31,6 +31,7 @@ public class Principal {
 
     public static void main(String[] args) {
         int tamano;
+        double perimetroMedio, sumaPerimetro = 0;
         Triangulo arrayTriangulos[];
 
         do {
@@ -46,7 +47,12 @@ public class Principal {
             Punto verticeC = new Punto(Math.random() * 100, Math.random() * 100);
             arrayTriangulos[i] = new Triangulo(verticeA, verticeB, verticeC);
             //System.out.println(arrayTriangulos[i]);
+            sumaPerimetro += arrayTriangulos[i].perimetro();
+            //System.out.println(perimetro);
         }
-        
+
+        perimetroMedio = sumaPerimetro / tamano;
+        System.out.println("El perímetro medio de todos los triángulos es: " + perimetroMedio);
+
     }
 }
