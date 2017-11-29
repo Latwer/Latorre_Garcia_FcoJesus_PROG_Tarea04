@@ -30,10 +30,9 @@ import utilidades.Entrada;
 public class Principal {
 
     public static void main(String[] args) {
-        int tamano;
-        double perimetroMedio, sumaPerimetro = 0;
+        int tamano, contadorMayor = 0, contadorMenor = 0;
+        double perimetroMedio, sumaPerimetro = 0, perimetroMayor = 0, perimetroMenor = 1000;
         Triangulo arrayTriangulos[];
-
         do {
             System.out.printf("¿Cuantos triángulos quieres generar? ");
             tamano = Entrada.entero();
@@ -41,6 +40,7 @@ public class Principal {
 
         arrayTriangulos = new Triangulo[tamano];
 
+        //Creación de los triángulos
         for (int i = 0; i < arrayTriangulos.length; i++) {
             Punto verticeA = new Punto(Math.random() * 100, Math.random() * 100);
             Punto verticeB = new Punto(Math.random() * 100, Math.random() * 100);
@@ -50,9 +50,39 @@ public class Principal {
             sumaPerimetro += arrayTriangulos[i].perimetro();
             //System.out.println(perimetro);
         }
-
+        //Media de los triángulos
         perimetroMedio = sumaPerimetro / tamano;
-        System.out.println("El perímetro medio de todos los triángulos es: " + perimetroMedio);
+        System.out.printf("El perímetro medio de todos los triángulos es: %.3f%n", perimetroMedio);
 
+        //Número de triángulos mayores o menores a la media
+        for (int i = 0; i < arrayTriangulos.length; i++) {
+            if (perimetroMedio <= arrayTriangulos[i].perimetro()) {
+                contadorMayor++;
+            }
+            if (perimetroMedio > arrayTriangulos[i].perimetro()) {
+                contadorMenor++;
+            }
+            if (arrayTriangulos[i].perimetro() > perimetroMayor) {
+                perimetroMayor = arrayTriangulos[i].perimetro();
+            }
+            if (arrayTriangulos[i].perimetro() < perimetroMenor) {
+                perimetroMenor = arrayTriangulos[i].perimetro();
+            }
+        }
+        System.out.println("El número de triángulos con un perímetro mayor o igual a la media es: " + contadorMayor);
+        System.out.println("El número de triángulos con un perímetro menor a la media es: " + contadorMenor);
+
+        //El triángulo mayor y el menor
+        for (int i = 0; i < arrayTriangulos.length; i++) {
+            if (perimetroMayor == arrayTriangulos[i].perimetro()) {
+                System.out.printf("El triángulo con mayor perímetro es: %s y tiene un perímetro de %.3f%n", arrayTriangulos[i], perimetroMayor);
+            }
+        }
+
+        for (int i = 0; i < arrayTriangulos.length; i++) {
+            if (perimetroMenor == arrayTriangulos[i].perimetro()) {
+                System.out.printf("El triángulo con menor perímetro es: %s y tiene un perímetro de %.3f%n", arrayTriangulos[i], perimetroMenor);
+            }
+        }
     }
 }
